@@ -7,10 +7,7 @@ module.exports = {
         //         pageCount: numberOfResults,
         //         searchString: searchString
         // }),
-        teams: async (_, { team_ids }, { dataSources }) => {
-            console.log(team_ids)
-         return    dataSources.mlbAPI.getTeams({ team_ids })
-        }
+        teams: async (_, { team_ids }, { dataSources }) =>  dataSources.mlbAPI.getTeams({ team_ids })
     },
     Team : {
         roster: async (team, _, { dataSources }) => dataSources.mlbAPI.getRoster({ team_id: team.team_id })
